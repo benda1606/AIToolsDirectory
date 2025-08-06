@@ -1071,6 +1071,14 @@ body {
     vertical-align: middle;
 }
 
+.logo-icon img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: var(--radius);
+    vertical-align: middle;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
