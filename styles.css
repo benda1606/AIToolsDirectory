@@ -79,10 +79,11 @@ body {
 }
 
 .logo h1 {
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: var(--accent-primary);
     margin-bottom: 0.25rem;
+    letter-spacing: -0.025em;
 }
 
 .logo p {
@@ -1064,8 +1065,10 @@ body {
 }
 
 .logo-icon {
-    font-size: 1.2em;
-    margin-right: 0.25rem;
+    font-size: 1.4em;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* Responsive Design */
