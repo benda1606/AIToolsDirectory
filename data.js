@@ -781,7 +781,7 @@ const aiTools = [
     {
         id: "dagger",
         name: "Dagger",
-        category: "devops",
+        category: "api-cli",
         tagline: "Programmable CI/CD engine",
         description: "Programmable CI/CD platform that allows you to define pipelines as code with AI-assisted configuration and optimization for faster, more reliable deployments.",
         logo: "⚔️",
@@ -813,7 +813,7 @@ const aiTools = [
     {
         id: "pulumi-ai",
         name: "Pulumi AI",
-        category: "devops",
+        category: "api-cli",
         tagline: "Infrastructure as code with AI",
         description: "Infrastructure as code platform with AI assistance for generating, reviewing, and optimizing cloud infrastructure definitions across multiple cloud providers.",
         logo: "☁️",
@@ -845,7 +845,7 @@ const aiTools = [
     {
         id: "k8sgpt",
         name: "K8sGPT",
-        category: "devops",
+        category: "api-cli",
         tagline: "Kubernetes AI assistant",
         description: "AI-powered tool for analyzing Kubernetes clusters, diagnosing issues, and providing intelligent recommendations for optimization and troubleshooting.",
         logo: "⚙️",
@@ -1409,10 +1409,10 @@ const categories = {
         icon: "fas fa-comments",
         color: "#06B6D4"
     },
-    "devops": {
-        name: "DevOps & Infrastructure",
-        description: "AI-powered DevOps and cloud tools",
-        icon: "fas fa-server",
+    "ai-models": {
+        name: "AI Models",
+        description: "Language models and AI platforms",
+        icon: "fas fa-brain",
         color: "#84CC16"
     },
     "creative": {
