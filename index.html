@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ToolsHub - Your Intelligent Guide to AI Development Tools</title>
+    <meta name="description" content="Comprehensive hub for AI development tools, from code assistants to autonomous agents. Find, compare, and build your perfect AI development toolkit.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><span class="logo-icon">🤖ℹ️</span> AI ToolsHub</h1>
+                    <p>Your intelligent guide to AI development tools</p>
+                </div>
+                <div class="header-actions">
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="stackBuilderBtn" class="btn btn-primary">
+                        <i class="fas fa-layer-group"></i> Build Toolkit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search tools...">
+                        <button id="clearSearch" class="clear-search" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="view-toggles">
+                        <button id="cardView" class="view-toggle active">
+                            <i class="fas fa-th-large"></i> Cards
+                        </button>
+                        <button id="tableView" class="view-toggle">
+                            <i class="fas fa-table"></i> Table
+                        </button>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <div class="categories">
+                        <button class="category-filter active" data-category="all">All Tools</button>
+                        <button class="category-filter" data-category="code-assistants">Code Assistants</button>
+                        <button class="category-filter" data-category="ai-agents">AI Agents</button>
+                        <button class="category-filter" data-category="workflow-automation">Workflow</button>
+                        <button class="category-filter" data-category="api-cli">API/CLI</button>
+                        <button class="category-filter" data-category="no-code">No-Code</button>
+                        <button class="category-filter" data-category="llm-interfaces">LLM Interfaces</button>
+                        <button class="category-filter" data-category="devops">DevOps</button>
+                        <button class="category-filter" data-category="creative">Creative</button>
+                    </div>
+                    <div class="sort-section">
+                        <select id="sortBy">
+                            <option value="name">Sort by Name</option>
+                            <option value="category">Sort by Category</option>
+                            <option value="pricing">Sort by Price</option>
+                            <option value="popularity">Sort by Popularity</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Tools Grid -->
+            <div id="toolsContainer" class="tools-container">
+                <div id="toolsGrid" class="tools-grid"></div>
+                <div id="toolsTable" class="tools-table" style="display: none;"></div>
+            </div>
+
+            <!-- No Results -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No tools found</h3>
+                <p>Try adjusting your search criteria or browse all categories.</p>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading tools...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Stack Builder Modal -->
+    <div id="stackBuilderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-layer-group"></i> Toolkit Builder</h2>
+                <button class="close-modal" id="closeStackBuilder">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="stack-builder-content">
+                    <div class="selected-tools">
+                        <h3>Your Selected Tools</h3>
+                        <div id="selectedToolsList" class="selected-tools-list">
+                            <p class="empty-state">Select tools from the main directory to add them here</p>
+                        </div>
+                    </div>
+                    <div class="stack-summary">
+                        <h3>Toolkit Summary</h3>
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <span>Monthly Cost:</span>
+                                <span id="totalMonthlyCost">$0</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Annual Cost:</span>
+                                <span id="totalAnnualCost">$0</span>
+                            </div>
+                            <div class="cost-item">
+                                <span>Tools Count:</span>
+                                <span id="toolsCount">0</span>
+                            </div>
+                        </div>
+                        <div class="stack-actions">
+                            <button id="exportStack" class="btn btn-secondary">
+                                <i class="fas fa-download"></i> Export Toolkit
+                            </button>
+                            <button id="clearStack" class="btn btn-outline">
+                                <i class="fas fa-trash"></i> Clear All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tool Detail Modal -->
+    <div id="toolDetailModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2 id="toolDetailTitle"></h2>
+                <button class="close-modal" id="closeToolDetail">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="toolDetailContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Modal -->
+    <div id="comparisonModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2><i class="fas fa-balance-scale"></i> Tool Comparison</h2>
+                <button class="close-modal" id="closeComparison">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="comparisonContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Special Sections -->
+    <section class="special-sections" style="display: none;">
+        <!-- Getting Started Guide -->
+        <div id="gettingStarted" class="section">
+            <div class="container">
+                <h2><i class="fas fa-rocket"></i> Getting Started Guide</h2>
+                <div class="guide-grid">
+                    <div class="guide-card">
+                        <h3>Beginner</h3>
+                        <p>New to AI tools? Start with these user-friendly options:</p>
+                        <ul>
+                            <li>ChatGPT - General AI assistant</li>
+                            <li>GitHub Copilot - Code assistance</li>
+                            <li>Framer - Website building</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="app.loadPrebuiltStack('Beginner')">Load Toolkit</button>
+                    </div>
+                    <div class="guide-card">
+                        <h3>Developer</h3>
+                        <p>Ready to supercharge your development workflow:</p>
+                        <ul>
+                            <li>Cursor - AI-first IDE</li>
+                            <li>Claude Code - Autonomous coding</li>
+                            <li>v0 - UI generation</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="app.loadPrebuiltStack('Solo Developer')">Load Toolkit</button>
+                    </div>
+                    <div class="guide-card">
+                        <h3>Enterprise</h3>
+                        <p>Scale AI across your organization:</p>
+                        <ul>
+                            <li>Amazon Q - AWS integration</li>
+                            <li>Dify - Production LLM apps</li>
+                            <li>Pulumi AI - Infrastructure</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="app.loadPrebuiltStack('Enterprise Development')">Load Toolkit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Integration Map -->
+        <div id="integrationMap" class="section">
+            <div class="container">
+                <h2><i class="fas fa-project-diagram"></i> Integration Map</h2>
+                <p>Discover which tools work together seamlessly</p>
+                <div id="integrationViz" class="integration-visualization"></div>
+            </div>
+        </div>
+
+        <!-- Use Case Scenarios -->
+        <div id="useCases" class="section">
+            <div class="container">
+                <h2><i class="fas fa-lightbulb"></i> Use Case Scenarios</h2>
+                <div class="scenarios-grid">
+                    <!-- Scenarios will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AI ToolsHub</h4>
+                    <p>Your intelligent guide to AI development tools and platforms.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" data-category="code-assistants">Code Assistants</a></li>
+                        <li><a href="#" data-category="ai-agents">AI Agents</a></li>
+                        <li><a href="#" data-category="workflow-automation">Workflow Automation</a></li>
+                        <li><a href="#" data-category="devops">DevOps & Infrastructure</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#getting-started">Getting Started</a></li>
+                        <li><a href="#use-cases">Use Cases</a></li>
+                        <li><a href="#stack-builder">Toolkit Builder</a></li>
+                        <li><a href="#comparison">Tool Comparison</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI ToolsHub. Made with AI assistance.</p>
+                <p class="powered-by">Powered by <strong>BendaAi</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
