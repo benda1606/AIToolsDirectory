@@ -1,0 +1,13 @@
+{
+  "name": "ai-tools-hub",
+  "version": "1.0.0",
+  "description": "AI Tools Hub - Comprehensive directory for AI development tools",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
