@@ -875,6 +875,641 @@ const aiTools = [
         tags: ["Kubernetes", "cluster analysis", "troubleshooting", "open source"]
     },
 
+    // AI Models & Platforms
+    {
+        id: "gpt-4o",
+        name: "GPT-4o",
+        category: "ai-models",
+        tagline: "OpenAI's most advanced multimodal model",
+        description: "OpenAI's flagship multimodal model with vision, audio, and text capabilities, offering state-of-the-art performance across reasoning, coding, and creative tasks.",
+        logo: "🧠",
+        pricing: {
+            api: "$0.0025 per 1K input tokens, $0.01 per 1K output tokens",
+            plus: "Included in ChatGPT Plus ($20/month)",
+            team: "Included in ChatGPT Team ($25/user/month)"
+        },
+        monthlyStartingPrice: 20,
+        popularity: 98,
+        features: [
+            "Multimodal (text, vision, audio)",
+            "128K context window",
+            "Function calling",
+            "JSON mode",
+            "Fast response times",
+            "Advanced reasoning"
+        ],
+        integrations: ["OpenAI API", "ChatGPT", "Azure OpenAI", "Third-party platforms"],
+        website: "https://openai.com/gpt-4o",
+        useCase: "A researcher uploads charts and documents, asks GPT-4o to analyze trends and generate a comprehensive report with insights across multiple data formats.",
+        proscons: {
+            pros: ["Best-in-class performance", "Multimodal capabilities", "Fast inference", "Wide availability"],
+            cons: ["Expensive for high usage", "Rate limits", "Requires internet", "Can hallucinate"]
+        },
+        bestFor: "Businesses and developers who need the most capable AI model for complex tasks",
+        tags: ["multimodal", "reasoning", "vision", "flagship"]
+    },
+    {
+        id: "claude-3-5-sonnet",
+        name: "Claude 3.5 Sonnet",
+        category: "ai-models",
+        tagline: "Anthropic's most intelligent model",
+        description: "Anthropic's most advanced model with superior reasoning, coding, and analysis capabilities, featuring 200K context window and strong safety measures.",
+        logo: "🎭",
+        pricing: {
+            api: "$0.003 per 1K input tokens, $0.015 per 1K output tokens",
+            pro: "Included in Claude Pro ($20/month)",
+            team: "Included in Claude Team ($25/user/month)"
+        },
+        monthlyStartingPrice: 20,
+        popularity: 94,
+        features: [
+            "200K context window",
+            "Superior reasoning",
+            "Advanced coding",
+            "Document analysis",
+            "Safety-focused",
+            "Artifact generation"
+        ],
+        integrations: ["Anthropic API", "Claude.ai", "Third-party platforms", "MCP protocol"],
+        website: "https://anthropic.com/claude",
+        useCase: "A legal team analyzes 100-page contracts by uploading them to Claude 3.5 Sonnet, which identifies risks, suggests improvements, and provides detailed explanations.",
+        proscons: {
+            pros: ["Large context window", "Strong reasoning", "Safety-focused", "Excellent for analysis"],
+            cons: ["More expensive than GPT-4", "Newer ecosystem", "Limited availability", "Usage limits"]
+        },
+        bestFor: "Professionals who need reliable AI for complex analysis and reasoning tasks",
+        tags: ["reasoning", "analysis", "safety", "large context"]
+    },
+    {
+        id: "gemini-2-flash",
+        name: "Gemini 2.0 Flash",
+        category: "ai-models",
+        tagline: "Google's fastest multimodal model",
+        description: "Google's latest multimodal AI model optimized for speed and efficiency, with strong integration to Google services and real-time capabilities.",
+        logo: "⚡",
+        pricing: {
+            api: "$0.000075 per 1K input tokens, $0.0003 per 1K output tokens",
+            free: "Included in Google AI Studio",
+            advanced: "Included in Gemini Advanced ($19.99/month)"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 89,
+        features: [
+            "Ultra-fast inference",
+            "Multimodal capabilities",
+            "1M context window",
+            "Real-time processing",
+            "Google integration",
+            "Tool use capabilities"
+        ],
+        integrations: ["Google AI Studio", "Vertex AI", "Google Workspace", "Search integration"],
+        website: "https://deepmind.google/technologies/gemini/",
+        useCase: "A data analyst processes large spreadsheets and generates instant visualizations and insights using Gemini 2.0 Flash's speed and Google Sheets integration.",
+        proscons: {
+            pros: ["Extremely fast", "Cost-effective", "Google ecosystem", "Large context"],
+            cons: ["Newer model", "Limited third-party support", "Google dependency", "Performance varies by task"]
+        },
+        bestFor: "Users who need fast, cost-effective AI with Google service integration",
+        tags: ["speed", "multimodal", "Google", "cost-effective"]
+    },
+    {
+        id: "llama-3-2",
+        name: "Llama 3.2",
+        category: "ai-models",
+        tagline: "Meta's latest open-source model",
+        description: "Meta's newest open-source language model with improved capabilities, available in multiple sizes with commercial usage rights and vision capabilities.",
+        logo: "🦙",
+        pricing: {
+            free: "Open source - free to use",
+            cloud: "Variable pricing on cloud platforms",
+            hardware: "Local deployment hardware costs"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 91,
+        features: [
+            "Open source",
+            "Multiple model sizes (1B, 3B, 11B, 90B)",
+            "Vision capabilities",
+            "Commercial license",
+            "Tool use",
+            "Multilingual support"
+        ],
+        integrations: ["Hugging Face", "Ollama", "Meta AI", "Cloud platforms", "Local deployment"],
+        website: "https://ai.meta.com/llama/",
+        useCase: "A startup deploys Llama 3.2 locally for their customer service chatbot, maintaining complete data privacy while providing high-quality responses without API costs.",
+        proscons: {
+            pros: ["Completely free", "Open source", "Commercial friendly", "Multiple sizes"],
+            cons: ["Requires technical setup", "Hardware needs", "Less ecosystem support", "Self-hosting complexity"]
+        },
+        bestFor: "Developers and organizations wanting powerful AI without usage costs or data sharing",
+        tags: ["open source", "free", "commercial", "self-hosted"]
+    },
+    {
+        id: "o1-pro",
+        name: "o1-pro",
+        category: "ai-models",
+        tagline: "OpenAI's advanced reasoning model",
+        description: "OpenAI's most advanced reasoning model designed for complex problem-solving, mathematical computation, and multi-step analysis with enhanced thinking capabilities.",
+        logo: "🤔",
+        pricing: {
+            api: "$0.015 per 1K input tokens, $0.06 per 1K output tokens",
+            pro: "Included in ChatGPT Pro ($200/month)",
+            plus: "Limited access in ChatGPT Plus"
+        },
+        monthlyStartingPrice: 200,
+        popularity: 88,
+        features: [
+            "Advanced reasoning",
+            "Mathematical computation",
+            "Multi-step problem solving",
+            "Chain-of-thought processing",
+            "Complex analysis",
+            "Scientific reasoning"
+        ],
+        integrations: ["OpenAI API", "ChatGPT Pro", "Research platforms"],
+        website: "https://openai.com/o1",
+        useCase: "A research scientist uses o1-pro to solve complex mathematical proofs, analyze experimental data, and develop multi-step research methodologies with detailed reasoning.",
+        proscons: {
+            pros: ["Superior reasoning", "Complex problem solving", "Mathematical excellence", "Research-grade"],
+            cons: ["Very expensive", "Slow response times", "Limited availability", "Specialized use cases"]
+        },
+        bestFor: "Researchers, scientists, and professionals who need the highest level of AI reasoning",
+        tags: ["reasoning", "mathematics", "research", "premium"]
+    },
+    {
+        id: "grok-3",
+        name: "Grok 3",
+        category: "ai-models",
+        tagline: "X's most capable AI model",
+        description: "X's latest AI model with real-time data access, improved reasoning capabilities, and integration with the X platform for current events and social insights.",
+        logo: "🚀",
+        pricing: {
+            premium: "Included in X Premium ($8/month)",
+            premiumPlus: "Higher limits in X Premium+ ($16/month)",
+            api: "API access pricing TBD"
+        },
+        monthlyStartingPrice: 8,
+        popularity: 82,
+        features: [
+            "Real-time X/Twitter data",
+            "Current events focus",
+            "Improved reasoning",
+            "Multimodal capabilities",
+            "Uncensored responses",
+            "Social media insights"
+        ],
+        integrations: ["X/Twitter", "X Premium", "Direct messaging"],
+        website: "https://grok.x.ai",
+        useCase: "A journalist uses Grok 3 to analyze trending topics, understand public sentiment on breaking news, and get real-time insights from X conversations and data.",
+        proscons: {
+            pros: ["Real-time data", "Current events", "Social insights", "Affordable"],
+            cons: ["X platform dependent", "Limited general use", "Controversial responses", "Newer model"]
+        },
+        bestFor: "X users who need AI with real-time social media and current events capabilities",
+        tags: ["real-time", "social media", "current events", "X platform"]
+    },
+    {
+        id: "claude-3-haiku",
+        name: "Claude 3 Haiku",
+        category: "ai-models",
+        tagline: "Anthropic's fastest model",
+        description: "Anthropic's fastest and most cost-effective model, optimized for speed while maintaining safety and reliability for everyday tasks.",
+        logo: "🌸",
+        pricing: {
+            api: "$0.00025 per 1K input tokens, $0.00125 per 1K output tokens",
+            free: "Limited access via Claude.ai"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 86,
+        features: [
+            "Ultra-fast responses",
+            "Cost-effective",
+            "Safety-focused",
+            "Good for simple tasks",
+            "API-friendly",
+            "Reliable performance"
+        ],
+        integrations: ["Anthropic API", "Claude.ai", "Third-party platforms"],
+        website: "https://anthropic.com/claude",
+        useCase: "A customer service team uses Claude 3 Haiku for fast, automated responses to common inquiries while maintaining helpful and safe interactions.",
+        proscons: {
+            pros: ["Very fast", "Extremely cost-effective", "Safe responses", "Good for automation"],
+            cons: ["Less capable than larger models", "Limited reasoning", "Basic features", "Not for complex tasks"]
+        },
+        bestFor: "Businesses needing fast, cost-effective AI for simple tasks and automation",
+        tags: ["fast", "cost-effective", "automation", "simple tasks"]
+    },
+    {
+        id: "mixtral-8x7b",
+        name: "Mixtral 8x7B",
+        category: "ai-models",
+        tagline: "Mistral's mixture-of-experts model",
+        description: "Open-source mixture-of-experts model by Mistral AI, offering strong performance with efficient inference and commercial usage rights.",
+        logo: "🌪️",
+        pricing: {
+            free: "Open source",
+            api: "$0.0007 per 1K tokens (various providers)",
+            cloud: "Variable pricing on platforms"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 83,
+        features: [
+            "Mixture-of-experts architecture",
+            "Open source",
+            "Commercial license",
+            "Efficient inference",
+            "Multilingual",
+            "Good code generation"
+        ],
+        integrations: ["Hugging Face", "Together AI", "Replicate", "Local deployment"],
+        website: "https://mistral.ai/",
+        useCase: "A European company deploys Mixtral 8x7B locally to build multilingual customer support while complying with data privacy regulations and avoiding API costs.",
+        proscons: {
+            pros: ["Open source", "Efficient", "Good performance", "Commercial friendly"],
+            cons: ["Complex architecture", "Hardware requirements", "Less ecosystem", "Technical setup needed"]
+        },
+        bestFor: "Technical teams wanting efficient, open-source AI with strong performance",
+        tags: ["open source", "efficient", "multilingual", "mixture-of-experts"]
+    },
+    {
+        id: "command-r-plus",
+        name: "Command R+",
+        category: "ai-models",
+        tagline: "Cohere's enterprise-focused model",
+        description: "Cohere's flagship model optimized for enterprise use cases with strong RAG capabilities, multilingual support, and business-focused features.",
+        logo: "🏢",
+        pricing: {
+            api: "$0.003 per 1K input tokens, $0.015 per 1K output tokens",
+            enterprise: "Custom enterprise pricing"
+        },
+        monthlyStartingPrice: null,
+        popularity: 75,
+        features: [
+            "Enterprise-optimized",
+            "Strong RAG capabilities",
+            "Multilingual (10+ languages)",
+            "Tool use",
+            "Long context",
+            "Business-focused training"
+        ],
+        integrations: ["Cohere API", "Enterprise platforms", "RAG systems"],
+        website: "https://cohere.com/",
+        useCase: "A global corporation uses Command R+ to build an internal knowledge assistant that searches company documents in multiple languages and provides accurate answers with citations.",
+        proscons: {
+            pros: ["Enterprise focus", "Strong RAG", "Multilingual", "Business training"],
+            cons: ["Expensive", "Limited general availability", "Smaller ecosystem", "Enterprise-focused"]
+        },
+        bestFor: "Enterprises needing AI for internal knowledge management and multilingual business applications",
+        tags: ["enterprise", "RAG", "multilingual", "business"]
+    },
+    {
+        id: "deepseek-v3",
+        name: "DeepSeek V3",
+        category: "ai-models",
+        tagline: "Chinese frontier AI model",
+        description: "DeepSeek's latest frontier model with strong reasoning and coding capabilities, offering competitive performance at lower costs.",
+        logo: "🔍",
+        pricing: {
+            api: "$0.00027 per 1K input tokens, $0.0011 per 1K output tokens",
+            free: "Limited free tier available"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 79,
+        features: [
+            "Strong reasoning",
+            "Excellent coding",
+            "Cost-effective",
+            "Fast inference",
+            "Long context",
+            "Competitive performance"
+        ],
+        integrations: ["DeepSeek API", "Third-party platforms", "Development tools"],
+        website: "https://deepseek.com/",
+        useCase: "A software development team uses DeepSeek V3 for code review, debugging, and generation, getting high-quality results at a fraction of the cost of premium models.",
+        proscons: {
+            pros: ["Very cost-effective", "Strong coding", "Good performance", "Fast responses"],
+            cons: ["Newer model", "Limited ecosystem", "Chinese origin", "Less proven at scale"]
+        },
+        bestFor: "Developers and businesses wanting strong AI capabilities at lower costs",
+        tags: ["cost-effective", "coding", "reasoning", "competitive"]
+    },
+    {
+        id: "qwen-2-5",
+        name: "Qwen 2.5",
+        category: "ai-models",
+        tagline: "Alibaba's multilingual model",
+        description: "Alibaba Cloud's advanced multilingual model with strong performance across languages and domains, available in multiple sizes.",
+        logo: "🌐",
+        pricing: {
+            free: "Open source versions",
+            cloud: "Variable pricing on Alibaba Cloud",
+            api: "Third-party API access available"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 77,
+        features: [
+            "Multilingual excellence",
+            "Multiple model sizes",
+            "Open source options",
+            "Strong Chinese support",
+            "Good general performance",
+            "Code generation"
+        ],
+        integrations: ["Alibaba Cloud", "Hugging Face", "Local deployment"],
+        website: "https://qwenlm.github.io/",
+        useCase: "A multinational company uses Qwen 2.5 for customer support across Asian markets, leveraging its strong Chinese and multilingual capabilities.",
+        proscons: {
+            pros: ["Excellent multilingual", "Open source options", "Strong Chinese", "Multiple sizes"],
+            cons: ["Chinese origin", "Limited Western adoption", "Smaller ecosystem", "Regional focus"]
+        },
+        bestFor: "Organizations needing strong multilingual AI, especially for Asian languages",
+        tags: ["multilingual", "Chinese", "open source", "Asian languages"]
+    },
+    {
+        id: "phi-4",
+        name: "Phi-4",
+        category: "ai-models",
+        tagline: "Microsoft's small but capable model",
+        description: "Microsoft's compact yet powerful model optimized for reasoning and mathematical tasks, designed for efficiency and edge deployment.",
+        logo: "Φ",
+        pricing: {
+            free: "Available on Hugging Face",
+            azure: "Azure AI pricing",
+            api: "Third-party API access"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 81,
+        features: [
+            "Small but capable",
+            "Strong reasoning",
+            "Mathematical excellence",
+            "Edge-friendly",
+            "Efficient inference",
+            "Good for fine-tuning"
+        ],
+        integrations: ["Azure AI", "Hugging Face", "ONNX", "Edge devices"],
+        website: "https://azure.microsoft.com/en-us/products/ai-services/",
+        useCase: "A mobile app developer uses Phi-4 for on-device AI features, providing fast math tutoring and reasoning assistance without internet connectivity.",
+        proscons: {
+            pros: ["Very efficient", "Good reasoning", "Edge-friendly", "Mathematical strength"],
+            cons: ["Limited general knowledge", "Smaller model", "Specialized use cases", "Less versatile"]
+        },
+        bestFor: "Developers needing efficient AI for edge devices and specialized reasoning tasks",
+        tags: ["efficient", "edge", "reasoning", "mathematics"]
+    },
+    {
+        id: "nova-pro",
+        name: "Amazon Nova Pro",
+        category: "ai-models",
+        tagline: "AWS's flagship multimodal model",
+        description: "Amazon's latest multimodal foundation model with vision, text, and video capabilities, optimized for AWS ecosystem and enterprise use.",
+        logo: "☁️",
+        pricing: {
+            api: "AWS Bedrock pricing model",
+            free: "Free tier available on Bedrock",
+            enterprise: "Enterprise pricing through AWS"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 74,
+        features: [
+            "Multimodal (text, vision, video)",
+            "AWS ecosystem integration",
+            "Enterprise-grade security",
+            "Scalable inference",
+            "Custom fine-tuning",
+            "Real-time processing"
+        ],
+        integrations: ["AWS Bedrock", "AWS services", "Enterprise platforms"],
+        website: "https://aws.amazon.com/bedrock/nova/",
+        useCase: "An enterprise uses Amazon Nova Pro through AWS Bedrock to analyze video content, generate reports, and integrate AI capabilities into their existing AWS infrastructure.",
+        proscons: {
+            pros: ["AWS integration", "Enterprise security", "Multimodal", "Scalable"],
+            cons: ["AWS dependency", "Newer model", "Limited independent access", "Enterprise focus"]
+        },
+        bestFor: "AWS customers needing enterprise-grade multimodal AI with cloud integration",
+        tags: ["AWS", "multimodal", "enterprise", "cloud-native"]
+    },
+    {
+        id: "yi-large",
+        name: "Yi-Large",
+        category: "ai-models",
+        tagline: "01.AI's flagship model",
+        description: "01.AI's most capable model with strong reasoning, coding, and multilingual capabilities, offering competitive performance with Chinese language excellence.",
+        logo: "🔢",
+        pricing: {
+            api: "$0.0005 per 1K input tokens, $0.0015 per 1K output tokens",
+            free: "Limited free tier"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 73,
+        features: [
+            "Strong reasoning",
+            "Excellent coding",
+            "Multilingual support",
+            "Long context window",
+            "Competitive performance",
+            "Cost-effective"
+        ],
+        integrations: ["01.AI API", "Third-party platforms"],
+        website: "https://01.ai/",
+        useCase: "A Chinese tech company uses Yi-Large for bilingual code documentation, technical writing, and complex reasoning tasks requiring both English and Chinese proficiency.",
+        proscons: {
+            pros: ["Cost-effective", "Strong performance", "Multilingual", "Good reasoning"],
+            cons: ["Newer company", "Limited ecosystem", "Chinese origin", "Less global adoption"]
+        },
+        bestFor: "Developers and businesses needing capable AI with strong Chinese language support",
+        tags: ["cost-effective", "multilingual", "reasoning", "Chinese"]
+    },
+    {
+        id: "glm-4",
+        name: "GLM-4",
+        category: "ai-models",
+        tagline: "Zhipu AI's general language model",
+        description: "Zhipu AI's flagship model with strong general capabilities, multimodal support, and excellent Chinese language understanding.",
+        logo: "🎯",
+        pricing: {
+            api: "Competitive API pricing",
+            free: "Free tier available",
+            enterprise: "Enterprise plans available"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 71,
+        features: [
+            "General language model",
+            "Multimodal capabilities",
+            "Strong Chinese support",
+            "Good reasoning",
+            "Code generation",
+            "Tool usage"
+        ],
+        integrations: ["Zhipu API", "ChatGLM platform", "Third-party integrations"],
+        website: "https://www.zhipuai.cn/",
+        useCase: "A Chinese educational platform uses GLM-4 to create interactive tutoring systems that can understand and respond in both Chinese and English across multiple subjects.",
+        proscons: {
+            pros: ["Strong Chinese", "Multimodal", "Good general performance", "Competitive pricing"],
+            cons: ["Chinese market focus", "Limited global presence", "Smaller ecosystem", "Regional availability"]
+        },
+        bestFor: "Organizations needing capable AI with strong Chinese language and cultural understanding",
+        tags: ["Chinese", "multimodal", "education", "general purpose"]
+    },
+    {
+        id: "reka-core",
+        name: "Reka Core",
+        category: "ai-models",
+        tagline: "Reka AI's multimodal model",
+        description: "Advanced multimodal model with strong vision, text, and audio capabilities, designed for complex multimodal reasoning and analysis tasks.",
+        logo: "🔮",
+        pricing: {
+            api: "$0.015 per 1K input tokens, $0.045 per 1K output tokens",
+            enterprise: "Custom enterprise pricing"
+        },
+        monthlyStartingPrice: null,
+        popularity: 68,
+        features: [
+            "Advanced multimodal",
+            "Strong vision capabilities",
+            "Audio processing",
+            "Complex reasoning",
+            "Research-grade quality",
+            "Flexible input formats"
+        ],
+        integrations: ["Reka API", "Research platforms", "Third-party tools"],
+        website: "https://reka.ai/",
+        useCase: "A research team uses Reka Core to analyze scientific papers with complex diagrams, charts, and images, extracting insights across multiple modalities simultaneously.",
+        proscons: {
+            pros: ["Excellent multimodal", "Strong vision", "Research quality", "Advanced reasoning"],
+            cons: ["Expensive", "Limited availability", "Newer company", "Specialized focus"]
+        },
+        bestFor: "Researchers and organizations needing advanced multimodal AI capabilities",
+        tags: ["multimodal", "vision", "research", "advanced"]
+    },
+    {
+        id: "anthropic-claude-computer-use",
+        name: "Claude (Computer Use)",
+        category: "ai-models",
+        tagline: "AI that can use computers",
+        description: "Anthropic's specialized Claude model with computer use capabilities, able to interact with computer interfaces, click buttons, and perform complex digital tasks.",
+        logo: "💻",
+        pricing: {
+            api: "Premium API pricing",
+            beta: "Currently in beta access",
+            enterprise: "Enterprise early access"
+        },
+        monthlyStartingPrice: null,
+        popularity: 92,
+        features: [
+            "Computer interaction",
+            "Screen understanding",
+            "Click and type actions",
+            "Multi-step task execution",
+            "Software automation",
+            "Digital workflow integration"
+        ],
+        integrations: ["Anthropic API", "Desktop automation", "Web browsers"],
+        website: "https://anthropic.com/news/developing-computer-use",
+        useCase: "A business analyst uses Claude Computer Use to automatically extract data from legacy software, fill out forms, and generate reports by interacting with the actual computer interface.",
+        proscons: {
+            pros: ["Revolutionary capability", "Real computer interaction", "Complex task automation", "Game-changing potential"],
+            cons: ["Beta stage", "Limited availability", "Security concerns", "High resource usage"]
+        },
+        bestFor: "Early adopters and enterprises wanting to automate complex computer-based workflows",
+        tags: ["computer use", "automation", "revolutionary", "beta"]
+    },
+    {
+        id: "perplexity-online",
+        name: "Perplexity Pro Model",
+        category: "ai-models",
+        tagline: "AI search and reasoning model",
+        description: "Perplexity's advanced model optimized for search, research, and real-time information processing with source citations and current knowledge.",
+        logo: "🔍",
+        pricing: {
+            free: "Basic searches with limited model access",
+            pro: "$20/month - Advanced models and unlimited searches",
+            enterprise: "Custom pricing for teams"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 85,
+        features: [
+            "Real-time web search",
+            "Source citations",
+            "Current information",
+            "Multi-model access",
+            "Research optimization",
+            "Academic mode"
+        ],
+        integrations: ["Web search", "Academic databases", "News sources"],
+        website: "https://perplexity.ai/",
+        useCase: "A market researcher uses Perplexity Pro to analyze current industry trends, getting real-time insights with proper citations from multiple sources for a comprehensive market report.",
+        proscons: {
+            pros: ["Real-time info", "Source citations", "Research-focused", "Current events"],
+            cons: ["Search-focused", "Limited general AI", "Subscription required", "Web dependency"]
+        },
+        bestFor: "Researchers, journalists, and analysts who need AI with current, cited information",
+        tags: ["search", "real-time", "research", "citations"]
+    },
+    {
+        id: "you-com-smart",
+        name: "You.com Smart Mode",
+        category: "ai-models",
+        tagline: "Search-integrated AI model",
+        description: "You.com's AI model with integrated web search capabilities, offering real-time information with AI-powered analysis and personalized results.",
+        logo: "🧭",
+        pricing: {
+            free: "Limited searches per day",
+            pro: "$15/month - Unlimited searches and advanced features"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 72,
+        features: [
+            "Integrated web search",
+            "Real-time information",
+            "Personalized results",
+            "Multi-source analysis",
+            "Privacy-focused",
+            "Custom search modes"
+        ],
+        integrations: ["Web search engines", "Social platforms", "News sources"],
+        website: "https://you.com/",
+        useCase: "A content creator uses You.com Smart Mode to research trending topics, analyze competitor content, and get personalized insights for creating timely, relevant content.",
+        proscons: {
+            pros: ["Search integration", "Privacy-focused", "Personalized", "Real-time"],
+            cons: ["Smaller user base", "Limited ecosystem", "Search-dependent", "Newer platform"]
+        },
+        bestFor: "Users who want AI-powered search with privacy and personalization",
+        tags: ["search", "privacy", "personalized", "real-time"]
+    },
+    {
+        id: "meta-ai-assistant",
+        name: "Meta AI",
+        category: "ai-models",
+        tagline: "Meta's AI assistant across platforms",
+        description: "Meta's AI assistant integrated across Facebook, Instagram, WhatsApp, and Messenger, powered by Llama models with social platform integration.",
+        logo: "📱",
+        pricing: {
+            free: "Free across Meta platforms",
+            premium: "Premium features in development"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 88,
+        features: [
+            "Cross-platform integration",
+            "Social media integration",
+            "Image generation",
+            "Real-time conversations",
+            "Group chat assistance",
+            "Platform-native features"
+        ],
+        integrations: ["Facebook", "Instagram", "WhatsApp", "Messenger", "Ray-Ban glasses"],
+        website: "https://ai.meta.com/",
+        useCase: "A social media manager uses Meta AI across Instagram and Facebook to generate content ideas, create images for posts, and engage with communities using AI assistance.",
+        proscons: {
+            pros: ["Free access", "Platform integration", "Billions of users", "Social features"],
+            cons: ["Platform dependency", "Privacy concerns", "Limited advanced features", "Meta ecosystem only"]
+        },
+        bestFor: "Users of Meta platforms who want integrated AI assistance for social media",
+        tags: ["social media", "free", "integrated", "Meta platforms"]
+    },
+
     // Creative AI Tools
     {
         id: "midjourney",
