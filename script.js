@@ -4,7 +4,7 @@ class AIToolsApp {
         this.currentView = 'cards';
         this.selectedCategory = 'all';
         this.searchQuery = '';
-        this.sortBy = 'name';
+        this.sortBy = 'popularity';
         this.selectedTools = new Set();
         this.comparisonTools = new Set();
         this.filteredTools = [...aiTools];

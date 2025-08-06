@@ -941,6 +941,370 @@ const aiTools = [
         },
         bestFor: "Video creators, filmmakers, and content creators who want AI-powered video tools",
         tags: ["video generation", "creative", "editing", "content creation"]
+    },
+    {
+        id: "dall-e",
+        name: "DALL-E 3",
+        category: "creative",
+        tagline: "OpenAI's image generation AI",
+        description: "OpenAI's advanced AI image generator integrated into ChatGPT, capable of creating highly detailed and realistic images from text descriptions with improved understanding.",
+        logo: "🖼️",
+        pricing: {
+            free: "Limited usage via ChatGPT free tier",
+            plus: "$20/month - Higher limits via ChatGPT Plus",
+            api: "$0.040-0.080 per image via API"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 93,
+        features: [
+            "High-quality image generation",
+            "Detailed prompt understanding",
+            "Style consistency",
+            "Safety filters",
+            "Integration with ChatGPT",
+            "Commercial usage rights"
+        ],
+        integrations: ["ChatGPT", "OpenAI API", "Microsoft Bing", "Third-party apps"],
+        website: "https://openai.com/dall-e-3",
+        useCase: "A social media manager generates custom illustrations for blog posts by describing scenes like 'a futuristic office with diverse people collaborating around a holographic display' and gets publication-ready images.",
+        proscons: {
+            pros: ["Exceptional quality", "Strong prompt adherence", "Commercial rights", "Safety-focused"],
+            cons: ["Limited direct access", "Usage limits", "Higher cost than alternatives", "Style limitations"]
+        },
+        bestFor: "Professionals who need high-quality, safe AI-generated images with commercial usage rights",
+        tags: ["image generation", "OpenAI", "commercial", "high-quality"]
+    },
+    {
+        id: "stable-diffusion",
+        name: "Stable Diffusion",
+        category: "creative",
+        tagline: "Open-source image generation",
+        description: "Open-source AI image generation model that can run locally or in the cloud, offering complete control over the generation process with extensive customization options.",
+        logo: "🌌",
+        pricing: {
+            free: "Open source model - run locally",
+            cloud: "$10-50/month - Various hosted services",
+            hardware: "GPU requirements for local usage"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 88,
+        features: [
+            "Open source model",
+            "Local execution option",
+            "Extensive customization",
+            "Multiple model variants",
+            "ControlNet support",
+            "LoRA training"
+        ],
+        integrations: ["Automatic1111", "ComfyUI", "Hugging Face", "RunPod", "Google Colab"],
+        website: "https://stability.ai/stable-diffusion",
+        useCase: "A digital artist uses Stable Diffusion locally with custom trained models and ControlNet to generate character illustrations while maintaining complete privacy and creative control.",
+        proscons: {
+            pros: ["Open source", "Full control", "No usage limits", "Extensive community"],
+            cons: ["Technical setup required", "Hardware requirements", "Learning curve", "No built-in safety filters"]
+        },
+        bestFor: "Technical users and artists who want complete control over AI image generation",
+        tags: ["open source", "local", "customizable", "community"]
+    },
+
+    // Automation & Productivity Tools
+    {
+        id: "zapier",
+        name: "Zapier",
+        category: "workflow-automation",
+        tagline: "Automate your work with AI",
+        description: "Leading automation platform connecting 5000+ apps with AI-powered workflows, intelligent data processing, and natural language automation creation.",
+        logo: "⚡",
+        pricing: {
+            free: "100 tasks/month, basic automations",
+            starter: "$19.99/month - 750 tasks, multi-step workflows",
+            professional: "$49/month - 2,000 tasks, advanced features",
+            team: "$69/month - Team features and higher limits"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 94,
+        features: [
+            "5000+ app integrations",
+            "AI-powered automation",
+            "Natural language workflow creation",
+            "Intelligent data formatting",
+            "Code execution",
+            "Team collaboration"
+        ],
+        integrations: ["Gmail", "Slack", "Salesforce", "HubSpot", "Notion", "OpenAI", "Thousands more"],
+        website: "https://zapier.com",
+        useCase: "A sales team automates lead processing by connecting their website forms to automatically create CRM records, send personalized emails, schedule follow-ups, and notify the sales team on Slack.",
+        proscons: {
+            pros: ["Massive app ecosystem", "User-friendly", "AI assistance", "Strong reliability"],
+            cons: ["Can get expensive", "Limited customization", "Task-based pricing", "Some advanced features require coding"]
+        },
+        bestFor: "Business users who want to automate workflows between different apps without technical complexity",
+        tags: ["automation", "integrations", "business", "no-code"]
+    },
+    {
+        id: "make",
+        name: "Make (Integromat)",
+        category: "workflow-automation",
+        tagline: "Visual automation platform",
+        description: "Visual automation platform with advanced workflow design capabilities, offering complex logic, error handling, and powerful data transformation tools.",
+        logo: "🔧",
+        pricing: {
+            free: "1,000 operations/month",
+            core: "$9/month - 10,000 operations",
+            pro: "$16/month - 10,000 operations + advanced features",
+            teams: "$29/month - Team features"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 85,
+        features: [
+            "Visual scenario builder",
+            "Complex conditional logic",
+            "Advanced data manipulation",
+            "Error handling",
+            "HTTP/webhook support",
+            "Real-time execution monitoring"
+        ],
+        integrations: ["1000+ apps", "OpenAI", "Google services", "Microsoft", "Slack", "APIs"],
+        website: "https://make.com",
+        useCase: "An e-commerce business creates complex workflows that process orders, check inventory across multiple warehouses, update accounting systems, send customized emails, and trigger fulfillment based on various conditions.",
+        proscons: {
+            pros: ["Visual workflow design", "Advanced logic capabilities", "Competitive pricing", "Powerful data handling"],
+            cons: ["Steeper learning curve", "Complex interface", "Fewer integrations than Zapier", "Limited free tier"]
+        },
+        bestFor: "Technical users who need advanced automation workflows with complex logic and data transformation",
+        tags: ["automation", "visual", "advanced", "data transformation"]
+    },
+
+    // AI Models & Platforms
+    {
+        id: "llama-3",
+        name: "Llama 3 (Meta AI)",
+        category: "llm-interfaces",
+        tagline: "Meta's open-source language model",
+        description: "Meta's powerful open-source language model available in various sizes, offering strong performance for chat, reasoning, and code generation with commercial usage rights.",
+        logo: "🦙",
+        pricing: {
+            free: "Free via Meta AI chat interface",
+            api: "Free via Hugging Face, paid on cloud platforms",
+            selfHosted: "Hardware costs for local deployment"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 87,
+        features: [
+            "Open source model",
+            "Multiple model sizes (8B, 70B, 405B)",
+            "Strong reasoning capabilities",
+            "Code generation",
+            "Multimodal support",
+            "Commercial usage allowed"
+        ],
+        integrations: ["Meta AI", "Hugging Face", "Ollama", "LM Studio", "Various cloud platforms"],
+        website: "https://ai.meta.com/llama/",
+        useCase: "A startup deploys Llama 3 locally to build a customer service chatbot, maintaining full control over their data while getting high-quality AI responses without ongoing API costs.",
+        proscons: {
+            pros: ["Open source", "Strong performance", "Commercial friendly", "No API costs for self-hosting"],
+            cons: ["Requires technical setup", "Hardware requirements", "Less ecosystem than OpenAI", "Limited official support"]
+        },
+        bestFor: "Developers and organizations who want powerful AI capabilities with full control and data privacy",
+        tags: ["open source", "Meta", "self-hosted", "commercial friendly"]
+    },
+    {
+        id: "grok",
+        name: "Grok (X AI)",
+        category: "llm-interfaces",
+        tagline: "X's AI assistant with real-time knowledge",
+        description: "X (Twitter)'s AI assistant with real-time access to X platform data, offering uncensored responses and current event awareness with a rebellious personality.",
+        logo: "🚀",
+        pricing: {
+            free: "Limited access for X users",
+            premium: "$8/month - X Premium subscription",
+            premiumPlus: "$16/month - Higher limits"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 78,
+        features: [
+            "Real-time X/Twitter data access",
+            "Current events awareness",
+            "Uncensored responses",
+            "Image understanding",
+            "Multimodal capabilities",
+            "Integration with X platform"
+        ],
+        integrations: ["X (Twitter)", "X Premium features", "Direct messaging"],
+        website: "https://grok.x.ai",
+        useCase: "A journalist uses Grok to analyze trending topics on X, get real-time insights about breaking news, and understand public sentiment around current events with uncensored perspectives.",
+        proscons: {
+            pros: ["Real-time social data", "Current events focus", "Uncensored responses", "X platform integration"],
+            cons: ["Requires X Premium", "Limited availability", "Newer service", "Controversial responses"]
+        },
+        bestFor: "X users who want AI assistance with real-time social media insights and current events analysis",
+        tags: ["real-time", "social media", "current events", "X platform"]
+    },
+    {
+        id: "jasper",
+        name: "Jasper AI",
+        category: "llm-interfaces",
+        tagline: "AI content creation platform",
+        description: "Enterprise-focused AI writing platform designed for marketing teams, offering brand voice training, content templates, and collaboration features for business content creation.",
+        logo: "✨",
+        pricing: {
+            free: "7-day free trial",
+            creator: "$49/month - Individual content creators",
+            pro: "$69/month - Small teams",
+            business: "Custom pricing - Enterprise features"
+        },
+        monthlyStartingPrice: 49,
+        popularity: 82,
+        features: [
+            "Brand voice training",
+            "Marketing content templates",
+            "Team collaboration",
+            "SEO optimization",
+            "Multi-language support",
+            "Plagiarism checker"
+        ],
+        integrations: ["Surfer SEO", "Grammarly", "Chrome extension", "Google Docs", "Shopify"],
+        website: "https://jasper.ai",
+        useCase: "A marketing agency uses Jasper to maintain consistent brand voice across all client content, generating blog posts, social media content, and ad copy while ensuring SEO optimization and brand compliance.",
+        proscons: {
+            pros: ["Brand consistency", "Marketing focus", "Team features", "Template library"],
+            cons: ["Expensive", "Marketing-focused only", "Subscription required", "Learning curve"]
+        },
+        bestFor: "Marketing teams and agencies who need AI writing with brand consistency and collaboration features",
+        tags: ["marketing", "brand voice", "team collaboration", "enterprise"]
+    },
+
+    // Additional Code Assistants
+    {
+        id: "windsurf",
+        name: "Windsurf (Codeium)",
+        category: "code-assistants",
+        tagline: "AI-first IDE with agentic capabilities",
+        description: "Next-generation AI-powered IDE that combines traditional coding with agentic AI capabilities, featuring Cascade for deep contextual code generation across entire codebases.",
+        logo: "🏄‍♂️",
+        pricing: {
+            free: "Individual use with basic features",
+            pro: "$12/month - Advanced features and models",
+            teams: "$20/month per user - Team collaboration"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 83,
+        features: [
+            "Cascade agentic flows",
+            "Deep codebase understanding",
+            "Multi-file editing",
+            "Real-time collaboration",
+            "Custom AI instructions",
+            "Terminal integration"
+        ],
+        integrations: ["Git", "GitHub", "Docker", "Various language servers", "Extensions"],
+        website: "https://codeium.com/windsurf",
+        useCase: "A full-stack developer uses Windsurf's Cascade feature to implement a new authentication system, with AI autonomously creating backend routes, database models, frontend components, and tests across multiple files.",
+        proscons: {
+            pros: ["Agentic AI capabilities", "Deep context understanding", "Competitive pricing", "Fast performance"],
+            cons: ["Newer editor", "Smaller ecosystem", "Learning curve", "Limited extensions"]
+        },
+        bestFor: "Developers who want cutting-edge AI assistance with agentic capabilities for complex projects",
+        tags: ["agentic", "full IDE", "deep context", "multi-file"]
+    },
+    {
+        id: "codeium",
+        name: "Codeium",
+        category: "code-assistants",
+        tagline: "Free AI coding assistant",
+        description: "Free AI-powered coding assistant offering code completion, chat, and search across 70+ programming languages with unlimited usage for individual developers.",
+        logo: "🔷",
+        pricing: {
+            free: "Unlimited for individuals",
+            teams: "$12/month per user - Team features and admin controls",
+            enterprise: "Custom pricing - Enterprise security and deployment"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 80,
+        features: [
+            "Unlimited free usage",
+            "70+ language support",
+            "AI chat assistant",
+            "Codebase search",
+            "Multi-IDE support",
+            "Local indexing"
+        ],
+        integrations: ["VS Code", "JetBrains", "Vim", "Emacs", "Visual Studio", "Web IDEs"],
+        website: "https://codeium.com",
+        useCase: "A student learning programming uses Codeium's free tier to get unlimited code suggestions, explanations, and help across different programming languages without any usage restrictions.",
+        proscons: {
+            pros: ["Completely free for individuals", "Wide language support", "Multiple IDE support", "No usage limits"],
+            cons: ["Newer service", "Fewer advanced features", "Smaller community", "Limited enterprise features"]
+        },
+        bestFor: "Individual developers, students, and small teams who want powerful AI assistance without cost",
+        tags: ["free", "unlimited", "multi-language", "student-friendly"]
+    },
+
+    // Additional Creative Tools
+    {
+        id: "leonardo-ai",
+        name: "Leonardo.ai",
+        category: "creative",
+        tagline: "AI art generation platform",
+        description: "Advanced AI image generation platform focused on gaming, concept art, and creative projects with fine-tuned models and advanced control features.",
+        logo: "🎭",
+        pricing: {
+            free: "150 tokens per day",
+            apprentice: "$12/month - 8,500 tokens",
+            artisan: "$30/month - 25,000 tokens",
+            maestro: "$60/month - 60,000 tokens"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 84,
+        features: [
+            "Fine-tuned models",
+            "ControlNet support",
+            "Canvas editor",
+            "Motion generation",
+            "Community models",
+            "Commercial licensing"
+        ],
+        integrations: ["Discord", "API access", "Third-party tools", "Mobile apps"],
+        website: "https://leonardo.ai",
+        useCase: "A game developer uses Leonardo.ai's specialized gaming models to create concept art for characters, environments, and assets, then uses the canvas editor to refine and compose scenes.",
+        proscons: {
+            pros: ["Gaming/art focus", "Advanced controls", "Fine-tuned models", "Commercial rights"],
+            cons: ["Token-based pricing", "Learning curve", "Smaller community than Midjourney", "Limited free usage"]
+        },
+        bestFor: "Game developers, concept artists, and creatives who need specialized AI art generation",
+        tags: ["gaming", "concept art", "advanced controls", "commercial"]
+    },
+    {
+        id: "synthesia",
+        name: "Synthesia",
+        category: "creative",
+        tagline: "AI video generation with avatars",
+        description: "AI video creation platform that generates professional videos with AI avatars speaking in multiple languages, perfect for training, marketing, and educational content.",
+        logo: "🎥",
+        pricing: {
+            free: "3 minutes of video credit",
+            personal: "$30/month - 10 minutes, 65+ avatars",
+            corporate: "$90/month - 30 minutes, custom avatars"
+        },
+        monthlyStartingPrice: 0,
+        popularity: 86,
+        features: [
+            "AI avatar speakers",
+            "120+ languages and accents",
+            "Custom avatar creation",
+            "Screen recording",
+            "Brand kit integration",
+            "Team collaboration"
+        ],
+        integrations: ["PowerPoint", "Canva", "Zapier", "API access", "LMS platforms"],
+        website: "https://synthesia.io",
+        useCase: "A multinational company creates training videos in 15 different languages using AI avatars, reducing video production costs by 90% while maintaining professional quality and consistency.",
+        proscons: {
+            pros: ["Professional quality", "Multi-language support", "Cost-effective", "Easy to use"],
+            cons: ["Subscription required", "Limited customization", "Avatar limitations", "Expensive for high usage"]
+        },
+        bestFor: "Businesses and educators who need professional video content in multiple languages",
+        tags: ["video creation", "avatars", "multi-language", "business"]
     }
 ];
 
@@ -950,40 +1314,60 @@ const predefinedStacks = {
         "cursor",
         "github-copilot", 
         "claude",
-        "v0-by-vercel"
+        "v0-by-vercel",
+        "codeium"
     ],
     "Startup Team": [
         "cursor",
         "claude-code",
-        "n8n",
+        "zapier",
         "bubble-ai",
-        "perplexity"
+        "perplexity",
+        "make"
     ],
     "Enterprise Development": [
         "github-copilot",
         "amazon-q-developer",
         "dify",
         "pulumi-ai",
-        "k8sgpt"
+        "k8sgpt",
+        "jasper"
     ],
     "Beginner": [
         "chatgpt",
-        "github-copilot",
-        "framer"
+        "codeium",
+        "framer",
+        "dall-e"
     ],
     "AI Researcher": [
         "claude",
-        "autogpt",
+        "llama-3",
+        "perplexity",
         "langflow",
         "anthropic-api",
-        "perplexity"
+        "autogpt"
     ],
     "Content Creator": [
         "chatgpt",
-        "runway",
         "midjourney",
-        "framer",
-        "bolt-new"
+        "dall-e",
+        "runway",
+        "synthesia",
+        "leonardo-ai"
+    ],
+    "Business Automation": [
+        "zapier",
+        "make",
+        "chatgpt",
+        "n8n",
+        "jasper"
+    ],
+    "Open Source Enthusiast": [
+        "llama-3",
+        "stable-diffusion",
+        "codeium",
+        "continue",
+        "flowise"
     ]
 };
 
